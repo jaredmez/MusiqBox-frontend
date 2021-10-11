@@ -19,10 +19,14 @@ export function getTopAlbums(artistName) {
 //-------youtube howto implement embed videos and call api https://www.youtube.com/watch?v=EAyo3_zJj5c ------------->
 export function getTrackInfo(artist, song) {
     const tubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCoWE-Uib-Ol5mrQmhcuB0Fiv4dKWjiNFI&type=video&maxResults=1&q=${artist}%20${song}`
-    return fetch(tubeUrl).then(res => res.json()).catch(err => console.log(err))
+    return fetch(tubeUrl)
+            .then(res => res.json())
+            .then(res => res.items[0].id.videoId)
+            .catch(err => console.log(err))
 }
 
 export default { 
     getTopTracks,
-    getTopAlbums
+    getTopAlbums,
+    getTrackInfo
 }
