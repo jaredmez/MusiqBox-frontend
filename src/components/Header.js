@@ -3,10 +3,10 @@ import {Link} from "react-router-dom"
 
 function Header() {
     return (
-        <>
-        <h1><Link to="/">Musiq Box</Link></h1>
-        <Link to="/userpage">Saved Songs</Link>
-        </>
+        <header>
+        <h1 className="mainHeader"><Link className="rLink" to="/">Musiq Box</Link></h1>
+        <Link className="rLink" to="/userpage">Saved Songs</Link>
+        </header>
     )
 }
 

@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { getTopTracks, getTopAlbums, getTrackInfo} from '../services/musiq';
+import { getTopTracks, getTopAlbums } from '../services/musiq';
 import TrackInfo from './TrackInfo';
 
 function Search(props) {
@@ -20,30 +20,7 @@ const onClick = (e) => {
             console.log(firstFiveTracks)
             return firstFiveTracks
         })
-    //     .then( async (tracks) => {
-    //         const trackInfo =[];
-
-    //         for (let i=0; i < tracks.length; i++) {
-    //             const newUTubeInfo = await getTrackInfo(searchValue, tracks[i].name)
-    //             trackInfo.push(newUTubeInfo);
-    //             console.log(newUTubeInfo);
-    //         }
-    //         // tracks.forEach(async track => {
-    //         //     console.log(track.name)
-    //         //     const newTrackInfo = await getTrackInfo(searchValue, track.name)
-    //         //     console.log(typeof newTrackInfo)
-    //         //     trackInfo.push(newTrackInfo);
-    //         // });
-    //         console.log(trackInfo.length);
-    //         // return trackInfo;
-    //     })
-    //     // .then(tracks => {
-            
-    //     //     console.log(tracks.length);
-    //     // })
-    //         // getTrackInfo(searchValue, tracks)
-    //         //     .then()
-        }
+}
 
     // // getTopAlbums(searchValue)
     // //     .then(res => res.json())
@@ -51,17 +28,18 @@ const onClick = (e) => {
 
 
     return (
-        <div>
+        <div className="mainContentPage">
             <input 
                 type='text'
                 value={searchValue}
                 onChange={onChange}
             />
             <button onClick={onClick}>search</button>
-
-            <div className="track-content">
-                {trackResults.map(track => 
-                    <TrackInfo track={track} saveSong={props.saveSong} />
+            
+            <div className="trackCtn">
+            <h3>Top Tracks</h3>
+                {trackResults.map((track, indx) => 
+                    <TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
                 )}
             </div>
 
