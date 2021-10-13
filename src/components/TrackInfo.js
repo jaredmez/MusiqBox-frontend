@@ -1,6 +1,7 @@
 import {getTrackInfo} from '../services/musiq'
 import { useState, useEffect } from 'react'
 import playImg from '../images/play-button.png'
+import saveImg from '../images/plus-save.png'
 
 function TrackInfo(props) {
     const internalData = {
@@ -39,7 +40,8 @@ function TrackInfo(props) {
                 <p>plays: {props.track.playcount}</p>
             </div>
             <img id="playButton" onClick={onPlay} src={playImg} />
-            <button onClick={() => props.saveSong(internalData)}>save</button>
+            <img id="saveButton" onClick={() => props.saveSong(internalData)} src={saveImg} />
+
             {/* <iframe id="ytplayer" type="text/html" width="420" height="320"
             src={`https://www.youtube.com/embed/${internalData.videoId}?autoplay=1`} frameBorder="0"></iframe> */}
             <iframe width="420" height="281" src={`https://www.youtube.com/embed/${vidId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -54,7 +56,7 @@ function TrackInfo(props) {
                 <p>plays: {props.track.playcount}</p>
             </div>
             <img id="playButton" onClick={onPlay} src={playImg} />
-            <button onClick={() => props.saveSong(internalData)}>save</button>
+            <img id="playButton" onClick={() => props.saveSong(internalData)} src={saveImg} />
 
         </div>)
 }

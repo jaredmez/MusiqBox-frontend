@@ -22,6 +22,20 @@ const onClick = (e) => {
         })
 }
 
+const onEnter = (e) => {
+    if (e.key === 'Enter') {
+        getTopTracks(searchValue)
+        .then(results => results.json())
+        .then(returnedTracks => {
+            const firstFiveTracks = returnedTracks.toptracks.track.slice(0, 5)
+            setTrackResults(firstFiveTracks)
+            console.log(firstFiveTracks)
+            return firstFiveTracks
+        })
+    }
+}
+
+
     // // getTopAlbums(searchValue)
     // //     .then(res => res.json())
     // //     .then(res => console.log(res))
@@ -29,12 +43,17 @@ const onClick = (e) => {
 
     return (
         <div className="mainContentPage">
+            <div className="searchCtn">
             <input 
+                id="searchInput"
                 type='text'
                 value={searchValue}
                 onChange={onChange}
+                onKeyPress={onEnter}
+                placeholder=". . . search music"
             />
-            <button onClick={onClick}>search</button>
+            {/* <button onClick={onClick}>search</button> */}
+            </div>
             
             <div className="trackCtn">
             <h3>Top Tracks</h3>
