@@ -39,8 +39,8 @@ function TrackInfo(props) {
                 <p><strong>{props.track.name}</strong></p>
                 <p>plays: {props.track.playcount}</p>
             </div>
-            <img id="playButton" onClick={onPlay} src={playImg} />
-            <img id="saveButton" onClick={() => props.saveSong(internalData)} src={saveImg} />
+            <img id="playButton" onClick={onPlay} src={playImg} alt="" />
+            <img id="saveButton" onClick={() => props.saveSong(internalData)} src={saveImg} alt="" />
 
             {/* <iframe id="ytplayer" type="text/html" width="420" height="320"
             src={`https://www.youtube.com/embed/${internalData.videoId}?autoplay=1`} frameBorder="0"></iframe> */}
@@ -55,8 +55,8 @@ function TrackInfo(props) {
                 <p><strong>{props.track.name}</strong></p>
                 <p>plays: {props.track.playcount}</p>
             </div>
-            <img id="playButton" onClick={onPlay} src={playImg} />
-            <img id="playButton" onClick={() => props.saveSong(internalData)} src={saveImg} />
+            <img id="playButton" onClick={onPlay} src={playImg} alt=""/>
+            <img id="playButton" onClick={() => props.saveSong(internalData)} src={saveImg} alt=""/>
 
         </div>)
 }

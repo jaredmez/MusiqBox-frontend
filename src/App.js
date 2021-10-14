@@ -2,14 +2,17 @@ import Header from './components/Header'
 import Search from './components/Search'
 import UserPage from './components/UserPage';
 import { useState } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, } from 'react-router-dom'
 import './App.css';
+import axios from 'axios'
 
 function App() {
 const [savedSongs, setSavedSongs] = useState([])
 
 const saveSong = (songInfo) => {
-  console.log('tried to add')
+  console.log('procedure to add song to DB')
+  axios.post(`http://localhost:3002/api/songs`, songInfo)
+    .then(res => console.log(res.data))
   setSavedSongs([...savedSongs, songInfo])
 }
   return (
