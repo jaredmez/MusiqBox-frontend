@@ -3,50 +3,42 @@ import { getTopTracks, getTopAlbums } from '../services/musiq';
 import TrackInfo from './TrackInfo';
 
 function Search(props) {
-const [searchValue, setSearchValue] = useState("")
-const [trackResults, setTrackResults] = useState([])
-// const [topAlbums, setTopAlbums] = useState([])
+    const [searchValue, setSearchValue] = useState("")
+    const [trackResults, setTrackResults] = useState([])
 
-const onChange = (e) => {
-    setSearchValue(e.target.value);
-}
-
-const onEnter = (e) => {
-    if (e.key === 'Enter') {
-        getTopTracks(searchValue)
-        .then(results => results.json())
-        .then(returnedTracks => {
-            const tracks = returnedTracks.toptracks.track.slice(0, 10)
-            setTrackResults(tracks)
-        })
+    const onChange = (e) => {
+        setSearchValue(e.target.value);
     }
-}
 
-
-    // // getTopAlbums(searchValue)
-    // //     .then(res => res.json())
-    // //     .then(res => console.log(res))
-
+    const onEnter = (e) => {
+        if (e.key === 'Enter') {
+            getTopTracks(searchValue)
+            .then(results => results.json())
+            .then(returnedTracks => {
+                const tracks = returnedTracks.toptracks.track.slice(0, 10)
+                setTrackResults(tracks)
+            })
+        }
+    }
 
     return (
         <div className="mainContentPage">
             <div className="searchCtn">
-            <input 
-                id="searchInput"
-                type='text'
-                value={searchValue}
-                onChange={onChange}
-                onKeyPress={onEnter}
-                placeholder=". . . search music"
-            />
-            {/* <button onClick={onClick}>search</button> */}
+                <input 
+                    id="searchInput"
+                    type='text'
+                    value={searchValue}
+                    onChange={onChange}
+                    onKeyPress={onEnter}
+                    placeholder=". . . search music"
+                />
             </div>
             
             <div className="trackCtn">
-            <h3>Top Tracks</h3>
-                {trackResults.map((track, indx) => 
-                    <TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
-                )}
+                <h3>Top Tracks</h3>
+                    {trackResults.map((track, indx) => 
+                        <TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
+                    )}
             </div>
 
             <div className="top-albums-list">

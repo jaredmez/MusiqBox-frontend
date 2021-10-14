@@ -6,7 +6,8 @@ A web application that lets users discover new music. Search for artists, songs 
 ### Technologies
 * Javascript
 * React
-* React Router package 
 * Node.js, Express
 * MongoDB, Atlas
 * APIs: lastfm, youtube
+* Other Packages: axios, react-router
+* Testing: Postman

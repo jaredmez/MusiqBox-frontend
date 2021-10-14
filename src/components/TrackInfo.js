@@ -34,18 +34,16 @@ function TrackInfo(props) {
         console.log('check internaldata for id' + vidId)
         return (
             <div className="trackContent">
-            <p>{props.num + 1}</p>
-            <div className="trackName">
-                <p><strong>{props.track.name}</strong></p>
-                <p>plays: {props.track.playcount}</p>
-            </div>
-            <img id="playButton" onClick={onPlay} src={playImg} alt="" />
-            <img id="saveButton" onClick={() => props.saveSong(internalData)} src={saveImg} alt="" />
+                <p>{props.num + 1}</p>
+                <div className="trackName">
+                    <p><strong>{props.track.name}</strong></p>
+                    <p>plays: {props.track.playcount}</p>
+                </div>
+                <img id="playButton" onClick={onPlay} src={playImg} alt="" />
+                <img id="saveButton" onClick={() => props.saveSong(internalData)} src={saveImg} alt="" />
 
-            {/* <iframe id="ytplayer" type="text/html" width="420" height="320"
-            src={`https://www.youtube.com/embed/${internalData.videoId}?autoplay=1`} frameBorder="0"></iframe> */}
-            <iframe width="420" height="281" src={`https://www.youtube.com/embed/${vidId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-        </div>)
+                <iframe width="420" height="281" src={`https://www.youtube.com/embed/${vidId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            </div>)
     }
     
     return (
