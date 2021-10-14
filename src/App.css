@@ -111,6 +111,10 @@ header * {
   height: auto;
 }
 
+.playlist-item-ctn img:hover {
+  cursor: pointer;
+}
+
 #more-icon img {
   width: 22px;
   height: auto;

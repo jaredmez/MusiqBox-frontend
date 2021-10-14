@@ -11,26 +11,13 @@ const onChange = (e) => {
     setSearchValue(e.target.value);
 }
 
-const onClick = (e) => {
-    getTopTracks(searchValue)
-        .then(results => results.json())
-        .then(returnedTracks => {
-            const firstFiveTracks = returnedTracks.toptracks.track.slice(0, 5)
-            setTrackResults(firstFiveTracks)
-            console.log(firstFiveTracks)
-            return firstFiveTracks
-        })
-}
-
 const onEnter = (e) => {
     if (e.key === 'Enter') {
         getTopTracks(searchValue)
         .then(results => results.json())
         .then(returnedTracks => {
-            const firstFiveTracks = returnedTracks.toptracks.track.slice(0, 5)
-            setTrackResults(firstFiveTracks)
-            console.log(firstFiveTracks)
-            return firstFiveTracks
+            const tracks = returnedTracks.toptracks.track.slice(0, 10)
+            setTrackResults(tracks)
         })
     }
 }
