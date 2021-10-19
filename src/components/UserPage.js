@@ -10,8 +10,9 @@ function UserPage(props) {
     const [pullFromDB, setPullFromDB] = useState(false);
     
     useEffect(() => {
-        axios.get('http://localhost:3002/api/songs')
-            .then(playlist => setPlaylist(playlist.data))
+        axios
+          .get('http://localhost:3002/api/songs')
+          .then(playlist => setPlaylist(playlist.data))
     }, [pullFromDB])
 
     const onPlay = async (songInfo) => {
@@ -39,12 +40,12 @@ function UserPage(props) {
     
     return (
         <div className="user-Page">
-            <h1>list of saved songs</h1>
-            
-            {playlist.map(song => 
-                <PlaylistItem key={song.name} data={song} onPlay={onPlay} /> )}
+          <h1>list of saved songs</h1>
+        
+          {playlist.map(song => 
+            <PlaylistItem key={song.name} data={song} onPlay={onPlay} /> )}
 
-            <VideoPlayer data={playVid} closePlayer={closePlayer}/>
+          <VideoPlayer data={playVid} closePlayer={closePlayer}/>
         </div>
         
     )
