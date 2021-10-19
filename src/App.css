@@ -124,4 +124,12 @@ header * {
   width: 35%;
 }
 
+.user-page {
+  /* position: relative; */
+}
 
+.videoplayer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

@@ -28,6 +28,7 @@ function TrackInfo(props) {
         setVidId(youtubeInfo);
         console.log('video id added:' + internalData.videoId);
         setShowVideo(true);
+        console.log('this songs data object', internalData)
     }
 
     if (showVideo) {
