@@ -7,11 +7,12 @@ import { getTrackInfo} from '../services/musiq'
 function UserPage(props) {
     const [playlist, setPlaylist] = useState([])
     const [playVid, setPlayVid] = useState({info: {}, play: false});
+    const [pullFromDB, setPullFromDB] = useState(false);
     
     useEffect(() => {
         axios.get('http://localhost:3002/api/songs')
             .then(playlist => setPlaylist(playlist.data))
-    }, [playVid])
+    }, [pullFromDB])
 
     const onPlay = async (songInfo) => {
         if (songInfo.videoId) {
@@ -26,7 +27,8 @@ function UserPage(props) {
             
             
             await axios.put(`http://localhost:3002/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
-            await setPlayVid({info: {videoId: youtubeInfo}, play: true})
+            await setPullFromDB(!pullFromDB);
+            setPlayVid({info: {...songInfo, videoId: youtubeInfo}, play: true})
         }
         
     }

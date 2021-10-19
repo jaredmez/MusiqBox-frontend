@@ -119,6 +119,7 @@ header * {
   width: 22px;
   height: auto;
 }
+
 .track-name,
 .track-artist {
   width: 35%;
@@ -132,4 +133,34 @@ header * {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  z-index: 2;
+  
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.remove-btn {
+  background-color: #f9f9f9;
+}
+.remove-btn:hover {
+  cursor: pointer;
+  
 }
