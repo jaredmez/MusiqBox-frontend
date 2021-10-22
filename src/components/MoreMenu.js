@@ -3,7 +3,7 @@ function MoreMenu(props) {
       <div className="dropdown-content">
         <ul>
           <li>find similar songs</li>
-          <li>find similar artist</li>
+          <li onClick={props.getSimArtist}>find similar artist </li>
           <li 
             onClick={props.onRemove} 
             className="remove-btn">

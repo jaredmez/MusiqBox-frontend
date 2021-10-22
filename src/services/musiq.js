@@ -15,6 +15,9 @@ export function getTopAlbums(artistName) {
     return fetch(`${BASEURL}/?method=artist.gettopalbums&artist=${artist}&api_key=${process.env.REACT_APP_LASTFM}&format=json`)
 }
 
+export function getSimArtist(artistName) {
+    return fetch(`${BASEURL}/?method=artist.getsimilar&artist=${artistName}&api_key=${process.env.REACT_APP_LASTFM}&format=json`)
+}
 
 //-------youtube howto implement embed videos and call api https://www.youtube.com/watch?v=EAyo3_zJj5c ------------->
 export function getTrackInfo(artist, song) {
@@ -28,5 +31,6 @@ export function getTrackInfo(artist, song) {
 export default { 
     getTopTracks,
     getTopAlbums,
-    getTrackInfo
+    getTrackInfo,
+    getSimArtist
 }
