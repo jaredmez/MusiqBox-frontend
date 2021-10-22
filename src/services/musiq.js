@@ -19,6 +19,10 @@ export function getSimArtist(artistName) {
     return fetch(`${BASEURL}/?method=artist.getsimilar&artist=${artistName}&api_key=${process.env.REACT_APP_LASTFM}&format=json`)
 }
 
+export function getSimSongs(artistName, songName) {
+    return fetch(`${BASEURL}/?method=track.getsimilar&artist=${artistName}&track=${songName}&api_key=${process.env.REACT_APP_LASTFM}&format=json`)
+}
+
 //-------youtube howto implement embed videos and call api https://www.youtube.com/watch?v=EAyo3_zJj5c ------------->
 export function getTrackInfo(artist, song) {
     const tubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${process.env.REACT_APP_YOUTUBE}&type=video&maxResults=1&q=${artist}%20${song}`
@@ -32,5 +36,6 @@ export default {
     getTopTracks,
     getTopAlbums,
     getTrackInfo,
-    getSimArtist
+    getSimArtist,
+    getSimSongs
 }

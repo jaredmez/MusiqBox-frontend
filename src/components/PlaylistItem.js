@@ -1,7 +1,7 @@
 import playicon from '../images/play-button2.png'
 import moreicon from '../images/more-icon.png'
 import MoreMenu from './MoreMenu'
-import { getSimArtist } from '../services/musiq'
+import { getSimArtist, getSimSongs } from '../services/musiq'
 import axios from 'axios'
 
 function PlaylistItem(props) {
@@ -18,6 +18,14 @@ function PlaylistItem(props) {
       const simArtists = await getSimArtist(artistName)
                                 .then(results => results.json())
       console.log(simArtists.similarartists.artist.slice(0, 10))
+    }
+
+    const getSongs = async (artistName, songName) => {
+      console.log('get similar song')
+      console.log(artistName + ' ' + songName)
+      const simSongs = await getSimSongs(artistName, songName)
+                        .then(results => results.json())
+      console.log(simSongs.similartracks.track.slice(0,5));
     }
     
     return (
@@ -38,7 +46,10 @@ function PlaylistItem(props) {
                 <li id="more-icon"> 
                   <div className="dropdown">
                     <img id="more-img" src={moreicon} alt="" />
-                    <MoreMenu onRemove={onRemove} getSimArtist={() => getArtist(artist)} />
+                    <MoreMenu 
+                      onRemove={onRemove} 
+                      getSimArtist={() => getArtist(artist)} 
+                      getSimSongs={() => getSongs(artist, name)}/>
                   </div>
                 </li>
               </ul>
