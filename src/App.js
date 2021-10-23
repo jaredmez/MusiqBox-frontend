@@ -1,6 +1,8 @@
 import Header from './components/Header'
 import Search from './components/Search'
 import UserPage from './components/UserPage';
+import SimArtists from './components/SimArtists'
+import SimSongs from './components/SimSongs'
 import { useState } from 'react';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom'
 import './App.css';
@@ -20,6 +22,14 @@ const saveSong = (songInfo) => {
         
         <BrowserRouter>
           <Switch>
+            <Route path="/similarartists">
+              <Header list={savedSongs}/>
+              <SimArtists />
+            </Route>
+            <Route path="/similarsongs">
+              <Header list={savedSongs}/>
+              <SimSongs />
+            </Route>
             <Route path="/userpage">
               <Header />
               <UserPage list={savedSongs}/>

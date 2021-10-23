@@ -29,7 +29,10 @@ header * {
 }
 
 .rLink,
-.rLink:link {
+.rLink:link,
+.artistLink:link,
+.artistLink,
+.songLink {
   text-decoration: none;
   color: black;
 }
