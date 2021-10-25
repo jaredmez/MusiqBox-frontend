@@ -12,6 +12,7 @@ import axios from 'axios'
 function App() {
 const [savedSongs, setSavedSongs] = useState([])
 const [simSongs, setSimSongs] = useState([])
+const [simArtists, setSimArtists] = useState([])
 
 const saveSong = (songInfo) => {
   console.log('procedure to add song to DB')
@@ -31,6 +32,17 @@ const getSongs = async (artistName, songName) => {
   setSimSongs(similarSongs);
 }
 
+const getArtist = async (artistName) => {
+  await setSimArtists([]);
+  console.log('get similar artists code block')
+  console.log(artistName)
+  const simArtist = await getSimArtist(artistName)
+                            .then(results => results.json())
+                            .then(results => results.similarartists.artist.slice(0,10))
+  // console.log(simArtists.similarartists.artist.slice(0, 10))
+  setSimArtists(simArtist);
+}
+
   return (
     <div className="App">
         
@@ -38,7 +50,7 @@ const getSongs = async (artistName, songName) => {
           <Switch>
             <Route path="/similarartists">
               <Header list={savedSongs}/>
-              <SimArtists />
+              <SimArtists data={simArtists}/>
             </Route>
             <Route path="/similarsongs">
               <Header list={savedSongs} />
@@ -46,7 +58,7 @@ const getSongs = async (artistName, songName) => {
             </Route>
             <Route path="/userpage">
               <Header />
-              <UserPage list={savedSongs} getSongs={getSongs}/>
+              <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
             </Route>
             <Route path="/">
               <Header list={savedSongs}/>

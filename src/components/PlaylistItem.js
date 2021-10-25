@@ -11,15 +11,6 @@ function PlaylistItem(props) {
         console.log(`want to remove ${name} song with id: ${id}`)
         axios.delete(`http://localhost:3002/api/songs/${id}`)
     }
-
-    const getArtist = async (artistName) => {
-      console.log('get similar artists code block')
-      console.log(artistName)
-      const simArtists = await getSimArtist(artistName)
-                                .then(results => results.json())
-      console.log(simArtists.similarartists.artist.slice(0, 10))
-    }
-
     
     return (
         <>
@@ -41,7 +32,7 @@ function PlaylistItem(props) {
                     <img id="more-img" src={moreicon} alt="" />
                     <MoreMenu 
                       onRemove={onRemove} 
-                      getSimArtist={() => getArtist(artist)} 
+                      getSimArtist={() => props.getArtist(artist)} 
                       getSimSongs={() => props.getSongs(artist, name)}/>
                   </div>
                 </li>

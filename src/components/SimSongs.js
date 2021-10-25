@@ -10,8 +10,8 @@ function SimSongs(props) {
     return (
         <div>
         <h1 className="sim-songs"> List of Similar Songs to go here</h1>
-        {songData.map(song => 
-           <p> {song.name}</p>)}
+        {songData.map((song, index) => 
+           <p key={index}> {song.name}</p>)}
         </div>
     )
 }
