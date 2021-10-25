@@ -43,7 +43,7 @@ function UserPage(props) {
           <h1>list of saved songs</h1>
         
           {playlist.map(song => 
-            <PlaylistItem key={song.name} data={song} onPlay={onPlay} /> )}
+            <PlaylistItem key={song.name} data={song} onPlay={onPlay} getSongs={props.getSongs} /> )}
 
           <VideoPlayer data={playVid} closePlayer={closePlayer}/>
         </div>

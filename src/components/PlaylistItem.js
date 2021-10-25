@@ -20,13 +20,6 @@ function PlaylistItem(props) {
       console.log(simArtists.similarartists.artist.slice(0, 10))
     }
 
-    const getSongs = async (artistName, songName) => {
-      console.log('get similar song')
-      console.log(artistName + ' ' + songName)
-      const simSongs = await getSimSongs(artistName, songName)
-                        .then(results => results.json())
-      console.log(simSongs.similartracks.track.slice(0,5));
-    }
     
     return (
         <>
@@ -49,7 +42,7 @@ function PlaylistItem(props) {
                     <MoreMenu 
                       onRemove={onRemove} 
                       getSimArtist={() => getArtist(artist)} 
-                      getSimSongs={() => getSongs(artist, name)}/>
+                      getSimSongs={() => props.getSongs(artist, name)}/>
                   </div>
                 </li>
               </ul>
