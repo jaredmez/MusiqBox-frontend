@@ -20,33 +20,49 @@ function Search(props) {
             })
         }
     }
-
-    return (
-        <div className="mainContentPage">
-            <div className="searchCtn">
-                <input 
-                    id="searchInput"
-                    type='text'
-                    value={searchValue}
-                    onChange={onChange}
-                    onKeyPress={onEnter}
-                    placeholder=". . . search music"
-                />
+    if (trackResults.length === 0) {
+        return (
+            <div className="mainContentPage">
+                <div className="searchCtn">
+                    <input 
+                        id="searchInput"
+                        type='text'
+                        value={searchValue}
+                        onChange={onChange}
+                        onKeyPress={onEnter}
+                        placeholder=". . . search music"
+                    />
+                </div>
             </div>
-            
-            <div className="trackCtn">
-                <h3>Top Tracks</h3>
-                    {trackResults.map((track, indx) => 
-                        <TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
-                    )}
-            </div>
+        )
+    } else {
+        return (
+            <div className="mainContentPage">
+                <div className="searchCtn">
+                    <input 
+                        id="searchInput"
+                        type='text'
+                        value={searchValue}
+                        onChange={onChange}
+                        onKeyPress={onEnter}
+                        placeholder=". . . search music"
+                    />
+                </div>
+                
+                <div className="trackCtn">
+                    <h3>Top Tracks</h3>
+                        {trackResults.map((track, indx) => 
+                            <TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
+                        )}
+                </div>
 
-            <div className="top-albums-list">
+                <div className="top-albums-list">
 
+                </div>
             </div>
-        </div>
-      
-    )
+        
+        )
+    }
 }
 
 export default Search

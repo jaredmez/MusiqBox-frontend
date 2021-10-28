@@ -10,12 +10,14 @@ function SimArtists(props) {
     console.log(artistData[0])
 
     return (
-        <div>
-        <h1 className="sim-artist"> List of Similar Artists to go here</h1>
-        {artistData.map((song, index) => 
-           <p key={index}> {song.name}</p>)}
+        <div className="sim-artist-ctn">
+            <h1 className="sim-artist">Similar Artists</h1>
+            {artistData.map((song, index) => 
+            <p key={index}> {song.name}</p>)}
         </div>
     )
+
+
 }
 
 export default SimArtists

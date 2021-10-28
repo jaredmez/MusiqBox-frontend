@@ -8,8 +8,8 @@ function SimSongs(props) {
 
 
     return (
-        <div>
-        <h1 className="sim-songs"> List of Similar Songs to go here</h1>
+        <div className="sim-songs-ctn">
+        <h1 className="sim-songs"> Similar Songs</h1>
         {songData.map((song, index) => 
            <p key={index}> {song.name}</p>)}
         </div>

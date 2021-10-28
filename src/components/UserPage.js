@@ -40,7 +40,7 @@ function UserPage(props) {
     
     return (
         <div className="user-Page">
-          <h1>list of saved songs</h1>
+          <h1>Liked Songs</h1>
         
           {playlist.map(song => 
             <PlaylistItem 
