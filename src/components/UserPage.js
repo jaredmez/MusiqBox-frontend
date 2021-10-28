@@ -11,7 +11,7 @@ function UserPage(props) {
     
     useEffect(() => {
         axios
-          .get('http://localhost:3002/api/songs')
+          .get('https://evening-everglades-19373.herokuapp.com/api/songs')
           .then(playlist => setPlaylist(playlist.data))
     }, [pullFromDB])
 
@@ -27,7 +27,7 @@ function UserPage(props) {
             console.log(songInfo);
             
             
-            await axios.put(`http://localhost:3002/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
+            await axios.put(`https://evening-everglades-19373.herokuapp.com/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
             await setPullFromDB(!pullFromDB);
             setPlayVid({info: {...songInfo, videoId: youtubeInfo}, play: true})
         }
