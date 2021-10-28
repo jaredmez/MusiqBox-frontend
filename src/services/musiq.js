@@ -1,5 +1,5 @@
 
-const BASEURL = 'http://ws.audioscrobbler.com/2.0'
+const BASEURL = 'https://ws.audioscrobbler.com/2.0'
 
 // const url = `${BASEURL}/?method=artist.gettoptracks&artist=${artist}&api_key=${API_KEY}&format=json`
 
