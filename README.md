@@ -11,3 +11,9 @@ A web application that lets users discover new music. Search for artists, songs 
 * APIs: lastfm, youtube
 * Other Packages: axios, react-router
 * Testing: Postman
+
+### Live Demo
+[Click Me](https://evening-everglades-19373.herokuapp.com/) for Demo 
+
+### Backend
+[Backend Code Here](https://github.com/jaredmez/mb-backend)
