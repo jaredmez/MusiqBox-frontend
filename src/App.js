@@ -3,6 +3,7 @@ import Search from './components/Search'
 import UserPage from './components/UserPage';
 import SimArtists from './components/SimArtists'
 import SimSongs from './components/SimSongs'
+import Landing from './components/Landing'
 import { useState } from 'react';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom'
 import { getSimArtist, getSimSongs } from './services/musiq'
@@ -60,9 +61,12 @@ const getArtist = async (artistName) => {
               <Header />
               <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
             </Route>
-            <Route path="/">
+            <Route path="/home">
               <Header list={savedSongs}/>
               <Search saveSong={saveSong}/>
+            </Route>
+            <Route path="/">
+              <Landing />
             </Route>
           </Switch>
         </BrowserRouter>
