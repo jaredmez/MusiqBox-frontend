@@ -6,7 +6,6 @@ import
     Nav,
     NavbarContainer,
     NavLogo,
-    // NavIcon
     MenuIcon,
     Menu,
     MenuItem,
@@ -39,43 +38,39 @@ const Navbar = () => {
     window.addEventListener('resize', showButton);
 
     return (
-        <div>
-                <Nav>
-                    <NavbarContainer>
-                        <NavLogo to="/">
-                            {/* <NavIcon/> */}
-                            MusiqBox
-                        </NavLogo>
-                        <MenuIcon onClick={handleClick}>
-                            {click ? <BiX/> : <BiMenu/>}
-                        </MenuIcon>
+      <div>
+        <Nav>
+          <NavbarContainer>
+              <NavLogo to="/">
+                  MusiqBox
+              </NavLogo>
+              <MenuIcon onClick={handleClick}>
+                  {click ? <BiX/> : <BiMenu/>}
+              </MenuIcon>
 
-                        <Menu onClick={handleClick} click={click}>
-                            <MenuItem>
-                                <MenuLink onClick={closeMenu} to="/">Sign Up</MenuLink>
-                            </MenuItem>
-                            <MenuItem>
-                                <MenuLink onClick={closeMenu} to="/recipe">Log In</MenuLink>
-                            </MenuItem>
-                            <MenuItemBtn>
-                                {button?(
-                                    <MenuLinkBtn to="/order-now">
-                                        <Button primary>Get Started</Button>
-                                    </MenuLinkBtn>
-                                ): (
-                                    <MenuLinkBtn to="/order-now">
-                                        <Button primary bigFont onClick={closeMenu}>Get Started</Button>
-                                    </MenuLinkBtn>
-                                )
-                                }
-                            </MenuItemBtn>
-                        </Menu>
-
-                    </NavbarContainer>
-
-
-                </Nav>
-        </div>
+              <Menu onClick={handleClick} click={click}>
+                <MenuItem>
+                  <MenuLink onClick={closeMenu} to="/">Sign Up</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink onClick={closeMenu} to="/">Log In</MenuLink>
+                </MenuItem>
+                <MenuItemBtn>
+                  {button?(
+                    <MenuLinkBtn to="/home">
+                      <Button primary>Get Started</Button>
+                    </MenuLinkBtn>
+                  ): (
+                    <MenuLinkBtn to="/home">
+                      <Button primary bigFont onClick={closeMenu}>Get Started</Button>
+                    </MenuLinkBtn>
+                  )
+                  }
+                </MenuItemBtn>
+              </Menu>
+          </NavbarContainer>
+        </Nav>
+      </div>
     )
 }
 

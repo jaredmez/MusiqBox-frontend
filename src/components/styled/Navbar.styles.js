@@ -44,15 +44,6 @@ transition: all .5s ease;
 }
 `;
 
-// export const NavIcon = styled(BiRestaurant)`
-// margin-right: .8rem;
-// transition: all .5s ease;
-
-// &:hover {
-//     transform: scale(2);
-// }
-// `;
-
 export const MenuIcon = styled.div`
 display: none;
 
@@ -82,7 +73,7 @@ text-align: center;
     position: absolute;
     top: 80px;
     left: ${({click}) => click ? '0' : '-100%'};
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.9);
     transition: all .5s ease;
 }
 `;
@@ -101,37 +92,37 @@ height: 80px;
 `;
 
 export const MenuLink = styled(Link)`
-text-decoration: none;
-font-weight: bold;
-font-size: 1.5rem;
-color: #fff;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem 2rem;
-height: 100%;
-transition: all .2s ease;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 100%;
+  transition: all .2s ease;
 
-&:hover {
-    color: #E38B06;
-    transform: traslateY(-3rem);
+  &:hover {
+      color: #E38B06;
+      transform: traslateY(-3rem);
 
-}
-&:active {
-    transform: traslateY(3rem);
-    color: #E38B06;
-}
+  }
+  &:active {
+      transform: traslateY(3rem);
+      color: #E38B06;
+  }
 
-@media only screen and (max-width:700px){
-    display: block;
-    padding: 2rem;
-    font-size: 18px;
-    text-align: center;
-    transition: all .2s ease;
-    line-height: 1.6;
-    
-}
-`;
+  @media only screen and (max-width:700px){
+      display: block;
+      padding: 2rem;
+      font-size: 18px;
+      text-align: center;
+      transition: all .2s ease;
+      line-height: 1.6;
+      
+  }
+  `;
 
 export const MenuItemBtn = styled.li`
 list-style: none;
