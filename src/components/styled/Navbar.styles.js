@@ -10,7 +10,7 @@ position: sticky;
 top: 0;
 z-index: 999;
 height: 80px;
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(0, 0, 0, 0.2);
 /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5); */
 box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
 display: flex;
@@ -82,7 +82,7 @@ text-align: center;
     position: absolute;
     top: 80px;
     left: ${({click}) => click ? '0' : '-100%'};
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: all .5s ease;
 }
 `;

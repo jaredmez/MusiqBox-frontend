@@ -17,7 +17,7 @@ const Pagecontent = styled.div`
 
 const Background = styled.img`
 /* Set rules to fill background */
-height: 100%;
+min-height: 100%;
 min-width: 1920px;
   
 /* Set up proportionate scaling */
@@ -29,7 +29,7 @@ position: fixed;
 top: 0;
 left: 0;
 
-filter: grayscale(50%);
+filter: grayscale(85%);
 
 @media screen and (max-width: 1920px) { /* Specific to this particular image */
     left: 50%;
