@@ -17,7 +17,7 @@ const [simArtists, setSimArtists] = useState([])
 
 const saveSong = (songInfo) => {
   console.log('procedure to add song to DB')
-  axios.post(`http://localhost:3002/api/songs`, songInfo)
+  axios.post(`https://evening-everglades-19373.herokuapp.com/api/songs`, songInfo)
     .then(res => console.log(res.data))
   setSavedSongs([...savedSongs, songInfo])
 }
