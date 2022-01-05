@@ -1,9 +1,10 @@
-import Header from './components/Header'
-import Search from './components/Search'
+import Search from './pages/search/Search'
 import UserPage from './components/UserPage';
 import SimArtists from './components/SimArtists'
 import SimSongs from './components/SimSongs'
 import Landing from './components/Landing'
+import Topbar from './components/topbar/Topbar';
+import Sidebar from './components/sidebar/Sidebar';
 import { useState } from 'react';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom'
 import { getSimArtist, getSimSongs } from './services/musiq'
@@ -46,30 +47,27 @@ const getArtist = async (artistName) => {
 
   return (
     <div className="App">
-        
-        <BrowserRouter>
+      <BrowserRouter>
+        <Topbar/>
+        <div className="container">
+          <Sidebar/>
           <Switch>
-            <Route path="/similarartists">
-              <Header list={savedSongs}/>
-              <SimArtists data={simArtists}/>
-            </Route>
-            <Route path="/similarsongs">
-              <Header list={savedSongs} />
-              <SimSongs data={simSongs}/>
-            </Route>
-            <Route path="/userpage">
-              <Header />
-              <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
-            </Route>
-            <Route path="/home">
-              <Header list={savedSongs}/>
-              <Search saveSong={saveSong}/>
-            </Route>
-            <Route path="/">
-              <Landing />
-            </Route>
+          <Route path="/similarartists">
+            <SimArtists data={simArtists}/>
+          </Route>
+          <Route path="/similarsongs">
+            <SimSongs data={simSongs}/>
+          </Route>
+          <Route path="/userpage">
+            <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
+          </Route>
+          <Route path="/">
+            <Search saveSong={saveSong}/>
+          </Route>
           </Switch>
-        </BrowserRouter>
+        </div>
+        
+      </BrowserRouter>
     </div>
   );
 }

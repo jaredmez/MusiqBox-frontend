@@ -1,0 +1,12 @@
+.sidebar {
+  color: green;
+  flex: 1;
+  /* height: 500px; */
+  border: 1px solid red;
+}
+
+.sidebarList {
+  list-style-type: none;
+  padding: 0;
+}
+
