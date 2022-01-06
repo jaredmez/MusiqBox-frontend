@@ -2,7 +2,7 @@ import Search from './pages/search/Search'
 import UserPage from './components/UserPage';
 import SimArtists from './components/SimArtists'
 import SimSongs from './components/SimSongs'
-import Landing from './components/Landing'
+import Home from './pages/home/Home';
 import Topbar from './components/topbar/Topbar';
 import Sidebar from './components/sidebar/Sidebar';
 import { useState } from 'react';
@@ -61,8 +61,11 @@ const getArtist = async (artistName) => {
           <Route path="/userpage">
             <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
           </Route>
-          <Route path="/">
+          <Route path="/search">
             <Search saveSong={saveSong}/>
+          </Route>
+          <Route path="/">
+            <Home/>
           </Route>
           </Switch>
         </div>
