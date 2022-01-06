@@ -41,33 +41,33 @@ const Navbar = () => {
       <div>
         <Nav>
           <NavbarContainer>
-              <NavLogo to="/">
-                  MusiqBox
-              </NavLogo>
-              <MenuIcon onClick={handleClick}>
-                  {click ? <BiX/> : <BiMenu/>}
-              </MenuIcon>
+            <NavLogo to="/">
+                MusiqBox
+            </NavLogo>
+            <MenuIcon onClick={handleClick}>
+                {click ? <BiX/> : <BiMenu/>}
+            </MenuIcon>
 
-              <Menu onClick={handleClick} click={click}>
-                <MenuItem>
-                  <MenuLink onClick={closeMenu} to="/">Sign Up</MenuLink>
-                </MenuItem>
-                <MenuItem>
-                  <MenuLink onClick={closeMenu} to="/">Log In</MenuLink>
-                </MenuItem>
-                <MenuItemBtn>
-                  {button?(
-                    <MenuLinkBtn to="/home">
-                      <Button primary>Get Started</Button>
-                    </MenuLinkBtn>
-                  ): (
-                    <MenuLinkBtn to="/home">
-                      <Button primary bigFont onClick={closeMenu}>Get Started</Button>
-                    </MenuLinkBtn>
-                  )
-                  }
-                </MenuItemBtn>
-              </Menu>
+            <Menu onClick={handleClick} click={click}>
+              <MenuItem>
+                <MenuLink onClick={closeMenu} to="/">Sign Up</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink onClick={closeMenu} to="/">Log In</MenuLink>
+              </MenuItem>
+              <MenuItemBtn>
+                {button?(
+                  <MenuLinkBtn to="/home">
+                    <Button primary>Get Started</Button>
+                  </MenuLinkBtn>
+                ): (
+                  <MenuLinkBtn to="/home">
+                    <Button primary bigFont onClick={closeMenu}>Get Started</Button>
+                  </MenuLinkBtn>
+                )
+                }
+              </MenuItemBtn>
+            </Menu>
           </NavbarContainer>
         </Nav>
       </div>

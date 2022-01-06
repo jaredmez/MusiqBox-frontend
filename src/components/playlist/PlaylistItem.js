@@ -1,7 +1,6 @@
 import playicon from '../../images/play-button2.png'
 import moreicon from '../../images/more-icon.png'
 import MoreMenu from '../moremenu/MoreMenu'
-import { getSimArtist, getSimSongs } from '../../services/musiq'
 import axios from 'axios'
 import "./playlistitem.css"
 
@@ -22,7 +21,7 @@ function PlaylistItem(props) {
                   className="play-ctn">
                   <img 
                     src={playicon} 
-                    alt="" 
+                    alt="play-button" 
                     onClick={() => props.onPlay(props.data)}
                   />
                 </li>
@@ -34,7 +33,8 @@ function PlaylistItem(props) {
                     <MoreMenu 
                       onRemove={onRemove} 
                       getSimArtist={() => props.getArtist(artist)} 
-                      getSimSongs={() => props.getSongs(artist, name)}/>
+                      getSimSongs={() => props.getSongs(artist, name)}
+                    />
                   </div>
                 </li>
               </ul>

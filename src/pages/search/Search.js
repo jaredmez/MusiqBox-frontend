@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { getTopTracks, getTopAlbums } from '../../services/musiq';
+import { getTopTracks } from '../../services/musiq';
 import TrackInfo from '../../components/trackinfo/TrackInfo';
 import "./search.css"
 

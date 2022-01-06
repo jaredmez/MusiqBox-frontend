@@ -3,7 +3,7 @@ const BASEURL = 'https://ws.audioscrobbler.com/2.0'
 
 // const url = `${BASEURL}/?method=artist.gettoptracks&artist=${artist}&api_key=${API_KEY}&format=json`
 
-export function getTopTracks(artistName) {
+export const getTopTracks = (artistName) => {
     const artist = artistName;
     return fetch(`${BASEURL}/?method=artist.gettoptracks&artist=${artist}&api_key=${process.env.REACT_APP_LASTFM}&format=json`)
         // .then(res => res.json())
@@ -32,10 +32,12 @@ export function getTrackInfo(artist, song) {
             .catch(err => console.log(err))
 }
 
-export default { 
-    getTopTracks,
-    getTopAlbums,
-    getTrackInfo,
-    getSimArtist,
-    getSimSongs
+const apiCalls = {
+  getTopTracks,
+  getTopAlbums,
+  getTrackInfo,
+  getSimArtist,
+  getSimSongs
 }
+
+export default apiCalls;

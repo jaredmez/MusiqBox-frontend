@@ -7,8 +7,6 @@ function SimArtists(props) {
         setArtistData(props.data)
     },[props])
 
-    console.log(artistData[0])
-
     return (
         <div className="sim-artist-ctn">
             <h1 className="sim-artist">Similar Artists</h1>

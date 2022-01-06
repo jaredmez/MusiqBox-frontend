@@ -11,9 +11,9 @@ function UserPage(props) {
     const [pullFromDB, setPullFromDB] = useState(false);
     
     useEffect(() => {
-        axios
-          .get('https://evening-everglades-19373.herokuapp.com/api/songs')
-          .then(playlist => setPlaylist(playlist.data))
+      axios
+        .get('https://evening-everglades-19373.herokuapp.com/api/songs')
+        .then(playlist => setPlaylist(playlist.data))
     }, [pullFromDB])
 
     const onPlay = async (songInfo) => {
@@ -21,18 +21,12 @@ function UserPage(props) {
             setPlayVid({info: songInfo, play: true})
         }
         else {
-            console.log('make call to get video Id from userpage')
-            const youtubeInfo = await getTrackInfo(songInfo.artist, songInfo.name);
-            console.log('wait to update state to show video')
-            
-            console.log(songInfo);
-            
-            
-            await axios.put(`https://evening-everglades-19373.herokuapp.com/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
-            await setPullFromDB(!pullFromDB);
-            setPlayVid({info: {...songInfo, videoId: youtubeInfo}, play: true})
-        }
-        
+          //call function to get video ID
+          const youtubeInfo = await getTrackInfo(songInfo.artist, songInfo.name);
+          await axios.put(`https://evening-everglades-19373.herokuapp.com/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
+          await setPullFromDB(!pullFromDB);
+          setPlayVid({info: {...songInfo, videoId: youtubeInfo}, play: true})
+        }  
     }
 
     const closePlayer = () => {
@@ -54,7 +48,6 @@ function UserPage(props) {
 
           <VideoPlayer data={playVid} closePlayer={closePlayer}/>
         </div>
-        
     )
 }
 

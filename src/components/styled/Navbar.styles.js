@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import {BiRestaurant} from 'react-icons/bi';
 import {Container} from './Container';
 
 

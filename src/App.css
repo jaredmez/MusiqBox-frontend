@@ -35,9 +35,13 @@ a:visited {
   right: 20px;
 }
 
+.videoplayerCloseBtn {
+  cursor: pointer;
+}
+
 .sim-artist-ctn,
 .sim-songs-ctn {
-  max-width: 225px;
+  flex:4;
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0px 0px 1px .5px rgba(0,0,0,.3);

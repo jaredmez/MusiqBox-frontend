@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Navbar from "./styled/Navbar";
+import Navbar from "../components/styled/Navbar";
 import backImg from "../images/main-bak.jpg"
 
 
