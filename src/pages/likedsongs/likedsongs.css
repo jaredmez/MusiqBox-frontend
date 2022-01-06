@@ -1,6 +1,7 @@
 
 .likedsongs {
   flex: 4;
+  padding: 10px 5px;
 }
 
 .likedsongs ul {
