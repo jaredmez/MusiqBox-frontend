@@ -1,17 +1,6 @@
 import styled from "styled-components";
-import Navbar from "../components/styled/Navbar";
 import backImg from "../images/main-bak.jpg"
-
-
-const Pagecontent = styled.div`
-  background-color: black;
-
-  background: url(${backImg});
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-`;
+import LoginBar from "../components/loginbar/LoginBar"
 
 const Background = styled.img`
   /* Set rules to fill background */
@@ -57,18 +46,17 @@ const ContentCtn = styled.div`
   }
 `
 
-export default function Landing() {
-    return(
-          <>
-          <Navbar />
-          <Background />
-          <ContentCtn>
-            <h1 style={{marginBottom:"20px"}}>Explore New Music</h1>
-            <h3>Start listening, watching, and sharing your musical world.</h3>
-           
-            
-          </ContentCtn>
-          <p>ahfdafdafdaf dafdafdafdafda</p>
-          </>
-    )
+export default function Landing({ startDemo }) {
+  return(
+    <>
+      <LoginBar startDemo={startDemo}/>
+      <Background />
+      <ContentCtn>
+        <h1 style={{marginBottom:"20px"}}>Explore New Music</h1>
+        <h3>Start listening, watching, and sharing your musical world.</h3>
+        
+        
+      </ContentCtn>
+    </>
+  )
 }

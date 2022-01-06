@@ -8,7 +8,7 @@
   border: .4px solid rgb(230, 227, 227);
   bottom: -10px;
   box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
-  left: 30px;
+  left: -5px;
   top: 14px;
   
 }
@@ -35,6 +35,7 @@
 .dropdown:hover .moremenu {
   display: block;
 }
+
 
 .remove-btn:hover {
   cursor: pointer;

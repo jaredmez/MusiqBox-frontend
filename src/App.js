@@ -10,31 +10,39 @@ import { BrowserRouter, Switch, Route, } from 'react-router-dom'
 import { getSimArtist, getSimSongs } from './services/musiq'
 import './App.css';
 import axios from 'axios'
+import Landing from './pages/Landing';
 
 function App() {
-const [simSongs, setSimSongs] = useState([])
-const [simArtists, setSimArtists] = useState([])
+  const [simSongs, setSimSongs] = useState([])
+  const [simArtists, setSimArtists] = useState([])
+  const [authed, setAuth] = useState(false);
 
-const saveSong = (songInfo) => {
-  axios.post(`https://evening-everglades-19373.herokuapp.com/api/songs`, songInfo)  
-}
+  const saveSong = (songInfo) => {
+    axios.post(`https://evening-everglades-19373.herokuapp.com/api/songs`, songInfo)  
+  }
 
-const getSongs = async (artistName, songName) => {
-  await setSimSongs([]);
-  const similarSongs = await getSimSongs(artistName, songName)
-    .then(results => results.json())
-    .then(results => results.similartracks.track.slice(0, 5))
+  const getSongs = async (artistName, songName) => {
+    await setSimSongs([]);
+    const similarSongs = await getSimSongs(artistName, songName)
+      .then(results => results.json())
+      .then(results => results.similartracks.track.slice(0, 5))
 
-  setSimSongs(similarSongs);
-}
+    setSimSongs(similarSongs);
+  }
 
-const getArtist = async (artistName) => {
-  await setSimArtists([]);
-  const simArtist = await getSimArtist(artistName)
-    .then(results => results.json())
-    .then(results => results.similarartists.artist.slice(0,10))
-  setSimArtists(simArtist);
-}
+  const getArtist = async (artistName) => {
+    await setSimArtists([]);
+    const simArtist = await getSimArtist(artistName)
+      .then(results => results.json())
+      .then(results => results.similarartists.artist.slice(0,10))
+    setSimArtists(simArtist);
+  }
+
+  if (!authed) {
+    return (
+    <Landing startDemo={setAuth}/>
+    )
+  }
 
   return (
     <div className="App">
@@ -60,7 +68,6 @@ const getArtist = async (artistName) => {
           </Route>
           </Switch>
         </div>
-        
       </BrowserRouter>
     </div>
   );
