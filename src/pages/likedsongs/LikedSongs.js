@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import PlaylistItem from './PlaylistItem'
+import PlaylistItem from '../../components/PlaylistItem'
 import axios from "axios";
-import VideoPlayer from './videoPlayer'
-import { getTrackInfo} from '../services/musiq'
+import VideoPlayer from '../../components/videoPlayer'
+import { getTrackInfo} from '../../services/musiq'
+import "./likedsongs.css"
 
 function UserPage(props) {
     const [playlist, setPlaylist] = useState([])
@@ -39,7 +40,7 @@ function UserPage(props) {
     }
     
     return (
-        <div className="user-Page">
+        <div className="likedsongs">
           <h1>Liked Songs</h1>
         
           {playlist.map(song => 

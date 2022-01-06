@@ -1,5 +1,5 @@
 import Search from './pages/search/Search'
-import UserPage from './components/UserPage';
+import LikedSongs from './pages/likedsongs/LikedSongs';
 import SimArtists from './components/SimArtists'
 import SimSongs from './components/SimSongs'
 import Home from './pages/home/Home';
@@ -58,8 +58,8 @@ const getArtist = async (artistName) => {
           <Route path="/similarsongs">
             <SimSongs data={simSongs}/>
           </Route>
-          <Route path="/userpage">
-            <UserPage list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
+          <Route path="/likedsongs">
+            <LikedSongs list={savedSongs} getSongs={getSongs} getArtist={getArtist} />
           </Route>
           <Route path="/search">
             <Search saveSong={saveSong}/>

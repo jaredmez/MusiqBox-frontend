@@ -1,0 +1,16 @@
+
+.likedsongs {
+  flex: 4;
+}
+
+.likedsongs ul {
+  list-style-type: none;
+
+}
+
+@media only screen and (min-width: 600px) {
+  .likedsongs {
+    margin: 0 auto;
+    width: 600px;
+  }
+}
