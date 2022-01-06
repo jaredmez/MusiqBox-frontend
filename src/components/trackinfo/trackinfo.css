@@ -1,0 +1,25 @@
+.trackContent {
+  padding: 10px 5px; 
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.trackContent * {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.trackName p {
+  display: block;
+  text-align: left;
+}
+
+#playButton,
+#saveButton {
+  height: 28px;
+  width: 28px;
+}
+
+#playButton:hover {
+  cursor: pointer;
+}

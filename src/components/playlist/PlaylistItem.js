@@ -1,8 +1,9 @@
-import playicon from '../images/play-button2.png'
-import moreicon from '../images/more-icon.png'
-import MoreMenu from './MoreMenu'
-import { getSimArtist, getSimSongs } from '../services/musiq'
+import playicon from '../../images/play-button2.png'
+import moreicon from '../../images/more-icon.png'
+import MoreMenu from '../moremenu/MoreMenu'
+import { getSimArtist, getSimSongs } from '../../services/musiq'
 import axios from 'axios'
+import "./playlistitem.css"
 
 function PlaylistItem(props) {
     const { name, artist, id } = props.data;

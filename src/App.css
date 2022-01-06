@@ -4,7 +4,6 @@
   margin:0;
   padding: 0;
   font-family: 'Lato';
-  /* background-color: #ebe8e8; */
   box-sizing: border-box;
 }
 
@@ -14,23 +13,6 @@
 
 a:visited {
   text-decoration: none;
-}
-
-header {
-  position: relative;
-  z-index: 10;
-  padding: 10px 20px;
-  text-align: center;
-  background-color: #ffffff;;
-  box-shadow: 5px 0 10px rgb(0 0 0 / 5%);
-}
-header * {
-  background-color: #ffffff;
-}
-
-.mainHeader {
-  margin: 10px auto;
-  font-weight: 700;
 }
 
 .rLink,
@@ -47,118 +29,10 @@ header * {
   background-color: #ffffff;
 }
 
-.trackContent {
-  padding: 10px 5px; 
-  margin-bottom: 10px;
-  border-bottom: 1px solid #f7f7f7;
-}
-
-.trackContent * {
-  display: inline-block;
-  padding: 0 5px;
-}
-
-.trackName p {
-  display: block;
-  text-align: left;
-}
-
-#playButton,
-#saveButton {
-  height: 28px;
-  width: 28px;
-}
-
-#playButton:hover {
-  cursor: pointer;
-}
-
-.playlist-item-ctn {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-  border-bottom: .5px solid #fff;
-}
-
-.playlist-item-ctn * {
-  
-  text-align: center;
-  
-}
-
-.playlist-item-ctn img {
-  width: 28px;
-  height: auto;
-}
-
-.playlist-item-ctn img:hover {
-  cursor: pointer;
-}
-
-#more-icon img {
-  width: 22px;
-  height: auto;
-}
-
-.track-name,
-.track-artist {
-  width: 35%;
-}
-
-.play-ctn,
-#more-icon {
-  width: 15%;
-}
-
 .videoplayer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  
-  min-width: 80px;
-  z-index: 2;
-  border: .4px solid rgb(230, 227, 227);
-  bottom: -10px;
-  box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
-  left: 30px;
-  top: 14px;
-  
-}
-
-.dropdown-content ul {
-  list-style-type: none;
-  width: 80px;
-  font-size: 10px;
-  text-align: left;
-  
-}
-
-.dropdown-content li {
-  text-align: left;
-  width: 80px;
-  padding: 10px 5px;
-  background-color: #ffffff;
-}
-
-.dropdown-content li:hover {
-  background-color: rgb(211, 199, 182);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.remove-btn:hover {
-  cursor: pointer;
 }
 
 .sim-artist-ctn,

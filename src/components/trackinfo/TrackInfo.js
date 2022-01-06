@@ -1,7 +1,8 @@
-import {getTrackInfo} from '../services/musiq'
+import {getTrackInfo} from '../../services/musiq'
 import { useState, useEffect } from 'react'
-import playImg from '../images/play-button.png'
-import saveImg from '../images/plus-save.png'
+import playImg from '../../images/play-button.png'
+import saveImg from '../../images/plus-save.png'
+import "./trackinfo.css"
 
 function TrackInfo(props) {
     const internalData = {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PlaylistItem from '../../components/PlaylistItem'
+import PlaylistItem from '../../components/playlist/PlaylistItem'
 import axios from "axios";
 import VideoPlayer from '../../components/videoPlayer'
 import { getTrackInfo} from '../../services/musiq'

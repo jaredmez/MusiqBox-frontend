@@ -1,0 +1,41 @@
+
+.moremenu {
+  display: none;
+  position: absolute;
+  
+  min-width: 80px;
+  z-index: 2;
+  border: .4px solid rgb(230, 227, 227);
+  bottom: -10px;
+  box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
+  left: 30px;
+  top: 14px;
+  
+}
+
+.moremenu ul {
+  list-style-type: none;
+  width: 80px;
+  font-size: 10px;
+  text-align: left;
+  
+}
+
+.moremenu li {
+  text-align: left;
+  width: 80px;
+  padding: 10px 5px;
+  background-color: #ffffff;
+}
+
+.moremenu li:hover {
+  background-color: rgb(211, 199, 182);
+}
+
+.dropdown:hover .moremenu {
+  display: block;
+}
+
+.remove-btn:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+.playlist-item-ctn {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  border-bottom: .5px solid #fff;
+}
+
+.playlist-item-ctn * {
+  
+  text-align: center;
+  
+}
+
+.playlist-item-ctn img {
+  width: 28px;
+  height: auto;
+}
+
+.playlist-item-ctn img:hover {
+  cursor: pointer;
+}
+
+.play-ctn,
+#more-icon {
+  width: 15%;
+}
+
+#more-icon img {
+  width: 22px;
+  height: auto;
+}
+
+.track-name,
+.track-artist {
+  width: 35%;
+}
+
+.dropdown {
+  position: relative;
+}
