@@ -12,7 +12,7 @@ function UserPage(props) {
     
     useEffect(() => {
       axios
-        .get('https://musiqbox.heroku.com/api/songs')
+        .get('https://musiqbox.herokuapp.com/api/songs')
         .then(playlist => setPlaylist(playlist.data))
     }, [pullFromDB])
 

@@ -8,7 +8,7 @@ function PlaylistItem(props) {
     const { name, artist, id } = props.data;
 
     const onRemove = () => {
-        axios.delete(`https://evening-everglades-19373.herokuapp.com/api/songs/${id}`)
+        axios.delete(`https://musiqbox.herokuapp.com/api/songs/${id}`)
     }
     
     return (
