@@ -18,7 +18,7 @@ function App() {
   const [authed, setAuth] = useState(false);
 
   const saveSong = (songInfo) => {
-    axios.post(`https://evening-everglades-19373.herokuapp.com/api/songs`, songInfo)  
+    axios.post(`https://musiqbox.herokuapp.com/api/songs`, songInfo)  
   }
 
   const getSongs = async (artistName, songName) => {

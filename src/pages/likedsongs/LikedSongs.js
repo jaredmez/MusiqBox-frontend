@@ -12,7 +12,7 @@ function UserPage(props) {
     
     useEffect(() => {
       axios
-        .get('https://evening-everglades-19373.herokuapp.com/api/songs')
+        .get('https://musiqbox.com/api/songs')
         .then(playlist => setPlaylist(playlist.data))
     }, [pullFromDB])
 
@@ -23,7 +23,7 @@ function UserPage(props) {
         else {
           //call function to get video ID
           const youtubeInfo = await getTrackInfo(songInfo.artist, songInfo.name);
-          await axios.put(`https://evening-everglades-19373.herokuapp.com/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
+          await axios.put(`https://musiqbox.herokuapp.com/api/songs/${songInfo.id}`, {videoId: youtubeInfo});
           await setPullFromDB(!pullFromDB);
           setPlayVid({info: {...songInfo, videoId: youtubeInfo}, play: true})
         }  
