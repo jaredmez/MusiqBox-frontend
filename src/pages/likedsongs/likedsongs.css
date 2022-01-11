@@ -9,9 +9,21 @@
 
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .likedsongs {
     margin: 0 auto;
     width: 600px;
+  }
+} */
+
+@media only screen and (max-width: 540px) {
+  /* For mobile phones: */
+  .likedsongs {
+    flex: 0 0 100%;
+    /* height: 100%; */
+    /* position: absolute; */
+    /* top: 65px; */
+    height: calc(100vh - 140px);
+    padding-top: 65px;
   }
 }

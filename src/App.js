@@ -11,11 +11,13 @@ import { getSimArtist, getSimSongs } from './services/musiq'
 import './App.css';
 import axios from 'axios'
 import Landing from './pages/Landing';
+import { useAuth0 } from "@auth0/auth0-react" 
 
 function App() {
   const [simSongs, setSimSongs] = useState([])
   const [simArtists, setSimArtists] = useState([])
   const [authed, setAuth] = useState(false);
+  const { isAuthenticated } = useAuth0();
 
   const saveSong = (songInfo) => {
     axios.post(`https://musiqbox.herokuapp.com/api/songs`, songInfo)  
@@ -38,7 +40,7 @@ function App() {
     setSimArtists(simArtist);
   }
 
-  if (!authed) {
+  if (!authed && !isAuthenticated) {
     return (
     <Landing startDemo={setAuth}/>
     )

@@ -1,6 +1,6 @@
 .sidebar {
   color: green;
-  flex: 1;
+  flex: 4;
   position: sticky;
   top: 65px;
   height: calc(100vh - 65px);
@@ -45,3 +45,43 @@
   margin-right: 6px;
 }
 
+@media only screen and (max-width: 540px) {
+  /* For mobile phones: */
+  .sidebar{
+    position: sticky;
+    bottom: 0px;
+    background-color: rgb(209, 208, 208);
+    z-index: 10;
+    flex: 0 0 75px;
+  }
+
+  .sidebarWrapper {
+    padding: 0;
+  }
+
+  .sidebarTitle {
+    display: none;
+  }
+
+  .sidebarList {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebarListItem {
+    padding: 5px;
+    cursor: pointer;
+    color: rgb(46, 45, 45);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    flex: 1;
+    
+    
+  }
+
+  .sidebarLogout {
+    display: none !important;
+  }
+}
