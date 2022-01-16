@@ -1,12 +1,31 @@
 .home {
   flex: 4;
-  padding: 10px 5px;
+  padding: 10px 20px;
+}
+
+.homeContainer {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 @media only screen and (max-width: 540px) {
   /* For mobile phones: */
-  .home {
-    flex: 1;
-    height: 100%;
+
+
+  .homeWrapper {
+    /* display: flex;
+    flex-direction: column; */
+    /* min-height: calc(100vh - 200px); */
+    /* flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch; */
+    /* height: calc(100vh - 153px); */
+    height: calc(100vh - 65px);
+    
   }
+
+
 }

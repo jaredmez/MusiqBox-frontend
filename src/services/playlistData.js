@@ -19,4 +19,59 @@ export let playlistData = [
     title: "Rock This",
     desc: "Check out some epic new singles"
   },
+  {
+    img:"/images/chillhop.jpg",
+    title: "Chill Hop",
+    desc: ""
+  },
+  {
+    img:"/images/guitar.jpg",
+    title: "Indie Jams",
+    desc: ""
+  },
+  {
+    img:"/images/happyvibe.jpg",
+    title: "Good Feels",
+    desc: ""
+  },
+  {
+    img:"/images/hypeboy.jpg",
+    title: "Trap",
+    desc: ""
+  },
+  {
+    img:"/images/melodic.jpg",
+    title: "Melodies Only",
+    desc: ""
+  },
+  {
+    img:"/images/mix.jpg",
+    title: "New Mixes",
+    desc: ""
+  },
+  {
+    img:"/images/new.jpg",
+    title: "Latest and Greatest",
+    desc: ""
+  },
+  {
+    img:"/images/oldschool.jpg",
+    title: "Throwbacks",
+    desc: ""
+  },
+  {
+    img:"/images/space.jpg",
+    title: "Discover Today",
+    desc: ""
+  },
+  {
+    img:"/images/turned.jpg",
+    title: "Turnt",
+    desc: ""
+  },
+  {
+    img:"/images/uzi.jpg",
+    title: "New This Week",
+    desc: ""
+  },
 ]
