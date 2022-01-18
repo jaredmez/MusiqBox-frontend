@@ -5,6 +5,7 @@ A web application that lets users discover new music. Search for artists, songs 
 
 ### Technologies
 * Javascript
+* REST APIs
 * React
 * Node.js, Express
 * MongoDB, Atlas
