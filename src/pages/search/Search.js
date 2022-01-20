@@ -48,17 +48,18 @@ function Search(props) {
 								onKeyPress={onEnter}
 								placeholder=". . . search artist"
 							/>
-						</div>
+						
                 
-						<div className="trackCtn">
-							<h3>Top Tracks</h3>
-								{trackResults.map((track, indx) => 
-									<TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
-								)}
-						</div>
+							<div className="trackCtn">
+								<h3>Top Tracks</h3>
+									{trackResults.map((track, indx) => 
+										<TrackInfo key={indx} num={indx} track={track} saveSong={props.saveSong} />
+									)}
+							</div>
 
-						<div className="top-albums-list">
+							<div className="top-albums-list">
 
+							</div>
 						</div>
           </div>
         

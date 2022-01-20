@@ -2,6 +2,7 @@
 .likedsongs {
   flex: 4;
   padding: 10px 5px;
+  padding-bottom: 390px;
 }
 
 .likedsongs ul {
@@ -19,11 +20,11 @@
 @media only screen and (max-width: 540px) {
   /* For mobile phones: */
   .likedsongs {
-    flex: 0 0 100%;
+    min-height: 100%;
     /* height: 100%; */
     /* position: absolute; */
     /* top: 65px; */
-    height: calc(100vh - 140px);
-    padding-top: 65px;
+    /* height: calc(100vh - 140px); */
+    /* padding-top: 65px; */
   }
 }

@@ -1,6 +1,6 @@
 .sidebar {
   color: green;
-  flex: 4;
+  flex: 1;
   position: sticky;
   top: 65px;
   height: calc(100vh - 65px);
@@ -48,11 +48,13 @@
 @media only screen and (max-width: 540px) {
   /* For mobile phones: */
   .sidebar{
-    position: sticky;
-    bottom: 0px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
     background-color: rgb(209, 208, 208);
     z-index: 10;
-    flex: 0 0 75px;
+    height: 75px;
+    /* flex: 0 0 75px; */
   }
 
   .sidebarWrapper {

@@ -49,9 +49,10 @@ a:visited {
 
 @media only screen and (max-width: 540px) {
   /* For mobile phones: */
-  .container{
-    flex-direction: column-reverse;
-    height: calc(100vh - 75px);
-    position: relative;
+  .App{
+    /* flex-direction: column-reverse; */
+    /* height: calc(100vh - 75px); */
+    
+    
   }
 }
